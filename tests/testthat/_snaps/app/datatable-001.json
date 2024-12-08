@@ -1,13 +1,9 @@
 {
   "input": {
     "Adult_Social_Care_Services-authority_select": "Aberdeen City",
-    "Adult_Social_Care_Services-datatable_cell_clicked": {
-
-    },
-    "Adult_Social_Care_Services-datatable_cells_selected": [
-
-    ],
-    "Adult_Social_Care_Services-datatable_columns_selected": null,
+    "Adult_Social_Care_Services-datatable_cell_clicked": {},
+    "Adult_Social_Care_Services-datatable_cells_selected": [],
+    "Adult_Social_Care_Services-datatable_columns_selected": {},
     "Adult_Social_Care_Services-datatable_rows_all": [
       1,
       2,
@@ -20,7 +16,7 @@
       3,
       4
     ],
-    "Adult_Social_Care_Services-datatable_rows_selected": null,
+    "Adult_Social_Care_Services-datatable_rows_selected": {},
     "Adult_Social_Care_Services-datatable_search": "",
     "Adult_Social_Care_Services-datatable_search_columns": [
       "",
@@ -46,9 +42,7 @@
     "Adult_Social_Care_Services-datatable_state": {
       "start": 0,
       "length": 10,
-      "order": [
-
-      ],
+      "order": [],
       "search": {
         "search": "",
         "smart": true,
@@ -163,9 +157,9 @@
             "regex": false,
             "caseInsensitive": true
           }
-       },
-       {
-         "visible": true,
+        },
+        {
+          "visible": true,
           "search": {
             "search": "",
             "smart": true,
@@ -232,7 +226,7 @@
     "Culture_Leisure_Services-authority_select": "Aberdeen City",
     "sidebar": "datatable_Adult_Social_Care_Services",
     "sidebarCollapsed": false,
-    "sidebarItemExpanded": null
+    "sidebarItemExpanded": {}
   },
   "output": {
     "Adult_Social_Care_Services-datatable": {
@@ -342,9 +336,7 @@
               "targets": 18
             }
           ],
-          "order": [
-
-          ],
+          "order": [],
           "autoWidth": false,
           "orderClasses": false,
           "orderCellsTop": true,
@@ -357,17 +349,15 @@
         },
         "selection": {
           "mode": "none",
-          "selected": null,
+          "selected": {},
           "target": "row",
-          "selectable": null
+          "selectable": {}
         }
       },
       "evals": [
         "options.ajax.data"
       ],
-      "jsHooks": [
-
-      ],
+      "jsHooks": [],
       "deps": [
         {
           "name": "jquery",
@@ -375,11 +365,11 @@
           "src": {
             "href": "jquery-3.6.0"
           },
-          "meta": null,
+          "meta": {},
           "script": "jquery-3.6.0.min.js",
-          "stylesheet": null,
-          "head": null,
-          "attachment": null,
+          "stylesheet": {},
+          "head": {},
+          "attachment": {},
           "all_files": true
         },
         {
@@ -388,15 +378,15 @@
           "src": {
             "href": "dt-core-1.13.6"
           },
-          "meta": null,
+          "meta": {},
           "script": "js/jquery.dataTables.min.js",
           "stylesheet": [
             "css/jquery.dataTables.min.css",
             "css/jquery.dataTables.extra.css"
           ],
-          "head": null,
-          "attachment": null,
-          "package": null,
+          "head": {},
+          "attachment": {},
+          "package": {},
           "all_files": false
         },
         {
@@ -405,12 +395,12 @@
           "src": {
             "href": "dt-ext-scroller-1.13.6"
           },
-          "meta": null,
+          "meta": {},
           "script": "js/dataTables.scroller.min.js",
           "stylesheet": "css/scroller.dataTables.min.css",
-          "head": null,
-          "attachment": null,
-          "package": null,
+          "head": {},
+          "attachment": {},
+          "package": {},
           "all_files": false
         },
         {
@@ -419,12 +409,12 @@
           "src": {
             "href": "dt-ext-fixedcolumns-1.13.6"
           },
-          "meta": null,
+          "meta": {},
           "script": "js/dataTables.fixedColumns.min.js",
           "stylesheet": "css/fixedColumns.dataTables.min.css",
-          "head": null,
-          "attachment": null,
-          "package": null,
+          "head": {},
+          "attachment": {},
+          "package": {},
           "all_files": false
         },
         {
@@ -433,12 +423,12 @@
           "src": {
             "href": "nouislider-7.0.10"
           },
-          "meta": null,
+          "meta": {},
           "script": "jquery.nouislider.min.js",
           "stylesheet": "jquery.nouislider.min.css",
-          "head": null,
-          "attachment": null,
-          "package": null,
+          "head": {},
+          "attachment": {},
+          "package": {},
           "all_files": true
         },
         {
@@ -447,12 +437,12 @@
           "src": {
             "href": "selectize-0.12.0"
           },
-          "meta": null,
+          "meta": {},
           "script": "selectize.min.js",
           "stylesheet": "selectize.bootstrap3.css",
-          "head": null,
-          "attachment": null,
-          "package": null,
+          "head": {},
+          "attachment": {},
+          "package": {},
           "all_files": true
         },
         {
@@ -461,17 +451,15 @@
           "src": {
             "href": "crosstalk-1.2.1"
           },
-          "meta": null,
+          "meta": {},
           "script": "js/crosstalk.min.js",
           "stylesheet": "css/crosstalk.min.css",
-          "head": null,
-          "attachment": null,
+          "head": {},
+          "attachment": {},
           "all_files": true
         }
       ]
     }
   },
-  "export": {
-
-  }
+  "export": {}
 }
