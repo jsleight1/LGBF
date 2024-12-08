@@ -1,0 +1,621 @@
+{
+  "input": {
+    "Adult_Social_Care_Services-authority_select": "Aberdeen City",
+    "Culture_Leisure_Services-authority_select": "Aberdeen City",
+    "sidebar": "visual_Adult_Social_Care_Services",
+    "sidebarCollapsed": false,
+    "sidebarItemExpanded": null
+  },
+  "output": {
+    "Adult_Social_Care_Services-SW01-indicator": {
+      "x": {
+        "layout": {
+          "margin": {
+            "b": 50,
+            "l": 50,
+            "t": 50,
+            "r": 50,
+            "pad": 4
+          },
+          "xaxis": {
+            "domain": [
+              0,
+              1
+            ],
+            "automargin": true,
+            "title": "",
+            "zerolinecolor": "#ffff",
+            "zerolinewidth": 2,
+            "gridcolor": "ffff",
+            "type": "category",
+            "categoryorder": "array",
+            "categoryarray": [
+              "2010-11",
+              "2011-12"
+            ]
+          },
+          "yaxis": {
+            "domain": [
+              0,
+              1
+            ],
+            "automargin": true,
+            "title": "",
+            "zerolinecolor": "#ffff",
+            "zerolinewidth": 2,
+            "gridcolor": "ffff",
+            "tickformat": "",
+            "tickprefix": "£",
+            "ticksuffix": ""
+          },
+          "legend": {
+            "orientation": "h",
+            "x": 0.29999999999999999,
+            "y": -0.29999999999999999
+          },
+          "hovermode": "closest",
+          "showlegend": true
+        },
+        "source": "A",
+        "config": {
+          "modeBarButtonsToAdd": [
+            "hoverclosest",
+            "hovercompare"
+          ],
+          "showSendToCloud": false
+        },
+        "data": [
+          {
+            "x": [
+              "2010-11",
+              "2011-12"
+            ],
+            "y": [
+              26.2471,
+              25.3567
+            ],
+            "name": "Local Authority",
+            "text": [
+              "Year: 2010-11<br />Indicator : Home care costs per hour for people aged 65 or over<br />Local Authority : 26.2471<br />Family Group : 27.585875<br />Scotland : 26.2732",
+              "Year: 2011-12<br />Indicator : Home care costs per hour for people aged 65 or over<br />Local Authority : 25.3567<br />Family Group : 28.98775<br />Scotland : 25.3438"
+            ],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "hovertemplate": [
+              "%{text}<extra><\/extra>",
+              "%{text}<extra><\/extra>"
+            ],
+            "marker": {
+              "color": "rgba(31,119,180,1)",
+              "line": {
+                "color": "rgba(31,119,180,1)"
+              }
+            },
+            "error_y": {
+              "color": "rgba(31,119,180,1)"
+            },
+            "error_x": {
+              "color": "rgba(31,119,180,1)"
+            },
+            "line": {
+              "color": "rgba(31,119,180,1)"
+            },
+            "xaxis": "x",
+            "yaxis": "y",
+            "frame": null
+          },
+          {
+            "x": [
+              "2010-11",
+              "2011-12"
+            ],
+            "y": [
+              27.585875000000001,
+              28.987749999999998
+            ],
+            "name": "Family Group",
+            "text": [
+              "Year: 2010-11<br />Indicator : Home care costs per hour for people aged 65 or over<br />Local Authority : 26.2471<br />Family Group : 27.585875<br />Scotland : 26.2732",
+              "Year: 2011-12<br />Indicator : Home care costs per hour for people aged 65 or over<br />Local Authority : 25.3567<br />Family Group : 28.98775<br />Scotland : 25.3438"
+            ],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "hovertemplate": [
+              "%{text}<extra><\/extra>",
+              "%{text}<extra><\/extra>"
+            ],
+            "marker": {
+              "color": "rgba(255,127,14,1)",
+              "line": {
+                "color": "rgba(255,127,14,1)"
+              }
+            },
+            "error_y": {
+              "color": "rgba(255,127,14,1)"
+            },
+            "error_x": {
+              "color": "rgba(255,127,14,1)"
+            },
+            "line": {
+              "color": "rgba(255,127,14,1)"
+            },
+            "xaxis": "x",
+            "yaxis": "y",
+            "frame": null
+          },
+          {
+            "x": [
+              "2010-11",
+              "2011-12"
+            ],
+            "y": [
+              26.273199999999999,
+              25.343800000000002
+            ],
+            "name": "Scotland",
+            "text": [
+              "Year: 2010-11<br />Indicator : Home care costs per hour for people aged 65 or over<br />Local Authority : 26.2471<br />Family Group : 27.585875<br />Scotland : 26.2732",
+              "Year: 2011-12<br />Indicator : Home care costs per hour for people aged 65 or over<br />Local Authority : 25.3567<br />Family Group : 28.98775<br />Scotland : 25.3438"
+            ],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "hovertemplate": [
+              "%{text}<extra><\/extra>",
+              "%{text}<extra><\/extra>"
+            ],
+            "marker": {
+              "color": "rgba(44,160,44,1)",
+              "line": {
+                "color": "rgba(44,160,44,1)"
+              }
+            },
+            "error_y": {
+              "color": "rgba(44,160,44,1)"
+            },
+            "error_x": {
+              "color": "rgba(44,160,44,1)"
+            },
+            "line": {
+              "color": "rgba(44,160,44,1)"
+            },
+            "xaxis": "x",
+            "yaxis": "y",
+            "frame": null
+          }
+        ],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.20000000000000001,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": [
+          "plotly_hover",
+          "plotly_click",
+          "plotly_selected",
+          "plotly_relayout",
+          "plotly_brushed",
+          "plotly_brushing",
+          "plotly_clickannotation",
+          "plotly_doubleclick",
+          "plotly_deselect",
+          "plotly_afterplot",
+          "plotly_sunburstclick"
+        ],
+        "base_url": "https://plot.ly"
+      },
+      "evals": [
+
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+        {
+          "name": "setprototypeof",
+          "version": "0.1",
+          "src": {
+            "href": "setprototypeof-0.1"
+          },
+          "meta": null,
+          "script": "setprototypeof.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "typedarray",
+          "version": "0.1",
+          "src": {
+            "href": "typedarray-0.1"
+          },
+          "meta": null,
+          "script": "typedarray.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "jquery",
+          "version": "3.5.1",
+          "src": {
+            "href": "jquery-3.5.1"
+          },
+          "meta": null,
+          "script": "jquery.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "crosstalk",
+          "version": "1.2.1",
+          "src": {
+            "href": "crosstalk-1.2.1"
+          },
+          "meta": null,
+          "script": "js/crosstalk.min.js",
+          "stylesheet": "css/crosstalk.min.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "plotly-htmlwidgets-css",
+          "version": "2.11.1",
+          "src": {
+            "href": "plotly-htmlwidgets-css-2.11.1"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": "plotly-htmlwidgets.css",
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "plotly-main",
+          "version": "2.11.1",
+          "src": {
+            "href": "plotly-main-2.11.1"
+          },
+          "meta": null,
+          "script": "plotly-latest.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        }
+      ]
+    },
+    "Adult_Social_Care_Services-SW01-indicator_ui": {
+      "html": "<div class=\"row\">\n  <div class=\"col-sm-6\">\n    <!--SHINY.SINGLETON[2f16dd4143257d29fc20e2a92962db655ff01cb9]-->\n    <head>\n      <link href=\"shinyWidgets/spinner/spin.css\" rel=\"stylesheet\" type=\"text/css\"/>\n      <style>.recalculating {opacity: 0.01 !important}<\/style>\n    <\/head>\n    <!--/SHINY.SINGLETON[2f16dd4143257d29fc20e2a92962db655ff01cb9]-->\n    <div style=\"position: relative; width:100%; height:400px;\">\n      <div class=\"spinner-bounce loading-spinner\">\n        <div style=\"background-color: #377EB8;\" class=\"bounce1\"><\/div>\n        <div style=\"background-color: #377EB8;\" class=\"bounce2\"><\/div>\n        <div style=\"background-color: #377EB8;\" class=\"bounce3\"><\/div>\n      <\/div>\n      <div class=\"plotly html-widget html-widget-output shiny-report-size shiny-report-theme html-fill-item\" id=\"Adult_Social_Care_Services-SW01-indicator\" style=\"width:100%;height:400px;\"><\/div>\n    <\/div>\n  <\/div>\n  <div class=\"col-sm-6\">\n    <div style=\"position: relative; width:100%; height:400px;\">\n      <div class=\"spinner-bounce loading-spinner\">\n        <div style=\"background-color: #377EB8;\" class=\"bounce1\"><\/div>\n        <div style=\"background-color: #377EB8;\" class=\"bounce2\"><\/div>\n        <div style=\"background-color: #377EB8;\" class=\"bounce3\"><\/div>\n      <\/div>\n      <div class=\"plotly html-widget html-widget-output shiny-report-size shiny-report-theme html-fill-item\" id=\"Adult_Social_Care_Services-SW01-numerator_denominator\" style=\"width:100%;height:400px;\"><\/div>\n    <\/div>\n  <\/div>\n  <a id=\"Adult_Social_Care_Services-SW01-download\" class=\"btn btn-default shiny-download-link disabled\" href=\"\" target=\"_blank\" download aria-disabled=\"true\" tabindex=\"-1\">\n    <i class=\"fas fa-download\" role=\"presentation\" aria-label=\"download icon\"><\/i>\n    Download data\n  <\/a>\n<\/div>",
+      "deps": [
+        {
+          "name": "htmltools-fill",
+          "version": "0.5.8.1",
+          "src": {
+            "href": "htmltools-fill-0.5.8.1"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": "fill.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "htmlwidgets",
+          "version": "1.6.4",
+          "src": {
+            "href": "htmlwidgets-1.6.4"
+          },
+          "meta": null,
+          "script": "htmlwidgets.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "plotly-binding",
+          "version": "4.10.4",
+          "src": {
+            "href": "plotly-binding-4.10.4"
+          },
+          "meta": null,
+          "script": "plotly.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "font-awesome",
+          "version": "6.4.2",
+          "src": {
+            "href": "font-awesome-6.4.2"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": [
+            "css/all.min.css",
+            "css/v4-shims.min.css"
+          ],
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        }
+      ]
+    },
+    "Adult_Social_Care_Services-SW01-numerator_denominator": {
+      "x": {
+        "layout": {
+          "margin": {
+            "b": 50,
+            "l": 50,
+            "t": 50,
+            "r": 100,
+            "pad": 4
+          },
+          "yaxis2": {
+            "overlaying": "y",
+            "side": "right",
+            "title": "Care Hours per Year"
+          },
+          "xaxis": {
+            "domain": [
+              0,
+              1
+            ],
+            "automargin": true,
+            "title": "",
+            "zerolinecolor": "#ffff",
+            "zerolinewidth": 2,
+            "gridcolor": "ffff",
+            "type": "category",
+            "categoryorder": "array",
+            "categoryarray": [
+              "2010-11",
+              "2011-12"
+            ]
+          },
+          "yaxis": {
+            "domain": [
+              0,
+              1
+            ],
+            "automargin": true,
+            "title": "Total Homecare Expenditure<br />(£000)",
+            "zerolinecolor": "#ffff",
+            "zerolinewidth": 2,
+            "gridcolor": "ffff"
+          },
+          "legend": {
+            "orientation": "h",
+            "x": 0.40000000000000002,
+            "y": -0.40000000000000002
+          },
+          "hovermode": "closest",
+          "showlegend": true
+        },
+        "source": "A",
+        "config": {
+          "modeBarButtonsToAdd": [
+            "hoverclosest",
+            "hovercompare"
+          ],
+          "showSendToCloud": false
+        },
+        "data": [
+          {
+            "x": [
+              "2010-11",
+              "2011-12"
+            ],
+            "y": [
+              17631.9954,
+              17821.454699999998
+            ],
+            "name": "Total Homecare Expenditure<br />(£000)",
+            "text": [
+              "Year: 2010-11<br />Total Homecare Expenditure  (£000): 17631.9954<br />Care Hours per Year: 671922.16",
+              "Year: 2011-12<br />Total Homecare Expenditure  (£000): 17821.4547<br />Care Hours per Year: 702913.12"
+            ],
+            "mode": "lines+markers",
+            "type": "scatter",
+            "hovertemplate": [
+              "%{text}<extra><\/extra>",
+              "%{text}<extra><\/extra>"
+            ],
+            "marker": {
+              "color": "rgba(31,119,180,1)",
+              "line": {
+                "color": "rgba(31,119,180,1)"
+              }
+            },
+            "error_y": {
+              "color": "rgba(31,119,180,1)"
+            },
+            "error_x": {
+              "color": "rgba(31,119,180,1)"
+            },
+            "line": {
+              "color": "rgba(31,119,180,1)"
+            },
+            "xaxis": "x",
+            "yaxis": "y",
+            "frame": null
+          },
+          {
+            "x": [
+              "2010-11",
+              "2011-12"
+            ],
+            "y": [
+              671922.16000000003,
+              702913.12
+            ],
+            "name": "Care Hours per Year",
+            "text": [
+              "Year: 2010-11<br />Total Homecare Expenditure  (£000): 17631.9954<br />Care Hours per Year: 671922.16",
+              "Year: 2011-12<br />Total Homecare Expenditure  (£000): 17821.4547<br />Care Hours per Year: 702913.12"
+            ],
+            "yaxis": "y2",
+            "mode": "lines+markers",
+            "type": "scatter",
+            "hovertemplate": [
+              "texttext%{text}<extra><\/extra>",
+              "texttext%{text}<extra><\/extra>"
+            ],
+            "marker": {
+              "color": "rgba(255,127,14,1)",
+              "line": {
+                "color": "rgba(255,127,14,1)"
+              }
+            },
+            "error_y": {
+              "color": "rgba(255,127,14,1)"
+            },
+            "error_x": {
+              "color": "rgba(255,127,14,1)"
+            },
+            "line": {
+              "color": "rgba(255,127,14,1)"
+            },
+            "xaxis": "x",
+            "frame": null
+          }
+        ],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.20000000000000001,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": [
+          "plotly_hover",
+          "plotly_click",
+          "plotly_selected",
+          "plotly_relayout",
+          "plotly_brushed",
+          "plotly_brushing",
+          "plotly_clickannotation",
+          "plotly_doubleclick",
+          "plotly_deselect",
+          "plotly_afterplot",
+          "plotly_sunburstclick"
+        ],
+        "base_url": "https://plot.ly"
+      },
+      "evals": [
+
+      ],
+      "jsHooks": [
+
+      ],
+      "deps": [
+        {
+          "name": "setprototypeof",
+          "version": "0.1",
+          "src": {
+            "href": "setprototypeof-0.1"
+          },
+          "meta": null,
+          "script": "setprototypeof.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "typedarray",
+          "version": "0.1",
+          "src": {
+            "href": "typedarray-0.1"
+          },
+          "meta": null,
+          "script": "typedarray.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "jquery",
+          "version": "3.5.1",
+          "src": {
+            "href": "jquery-3.5.1"
+          },
+          "meta": null,
+          "script": "jquery.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "crosstalk",
+          "version": "1.2.1",
+          "src": {
+            "href": "crosstalk-1.2.1"
+          },
+          "meta": null,
+          "script": "js/crosstalk.min.js",
+          "stylesheet": "css/crosstalk.min.css",
+          "head": null,
+          "attachment": null,
+          "all_files": true
+        },
+        {
+          "name": "plotly-htmlwidgets-css",
+          "version": "2.11.1",
+          "src": {
+            "href": "plotly-htmlwidgets-css-2.11.1"
+          },
+          "meta": null,
+          "script": null,
+          "stylesheet": "plotly-htmlwidgets.css",
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        },
+        {
+          "name": "plotly-main",
+          "version": "2.11.1",
+          "src": {
+            "href": "plotly-main-2.11.1"
+          },
+          "meta": null,
+          "script": "plotly-latest.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "all_files": false
+        }
+      ]
+    },
+    "Adult_Social_Care_Services-indicator_boxes": {
+      "html": "<div class=\"col-sm-12\">\n  <div class=\"nav-tabs-custom\">\n    <ul class=\"nav nav-tabs pull-right\" data-tabsetid=\"4896\">\n      <li class=\"active\">\n        <a href=\"#tab-4896-1\" data-toggle=\"tab\" data-bs-toggle=\"tab\" data-value=\"Home care costs per hour for people aged 65 or over\">Home care costs per hour for people aged 65 or over<\/a>\n      <\/li>\n      <li class=\"header pull-left\">Financial<\/li>\n    <\/ul>\n    <div class=\"tab-content\" data-tabsetid=\"4896\">\n      <div class=\"tab-pane active\" data-value=\"Home care costs per hour for people aged 65 or over\" id=\"tab-4896-1\">\n        <div id=\"Adult_Social_Care_Services-SW01-indicator_ui\" class=\"shiny-html-output\"><\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/div>",
+      "deps": [
+
+      ]
+    }
+  },
+  "export": {
+
+  }
+}

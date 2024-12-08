@@ -1,0 +1,9 @@
+^renv$
+^renv\.lock$
+^\.github$
+^data-raw$
+^LICENSE.md$
+^README.Rmd$
+^app.R$
+rsconnect/
+_disable_autoload.R
