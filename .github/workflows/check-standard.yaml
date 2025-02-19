@@ -33,12 +33,12 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: any::rcmdcheck
-          needs: check
-
-      # - uses: r-lib/actions/check-r-package@v2
+      # - uses: r-lib/actions/setup-r-dependencies@v2
       #   with:
-      #     upload-snapshots: true
-      #     build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+      #     extra-packages: any::rcmdcheck
+      #     needs: check
+
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
+          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
