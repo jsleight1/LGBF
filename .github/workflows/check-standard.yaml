@@ -38,18 +38,22 @@ jobs:
           echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
         shell: bash
 
-      - name: Install
+      - name: Install R packages
         run: |
           install.packages(c('mockery', 'shinytest2'))
         shell: Rscript {0}
 
       - name: Install pdflatex
         run: |
-          apt-get install texlive-latex-base -y
+          apt-get install -y \
+            texlive-latex-base \
+            texlive-fonts-extra \
+            texlive-fonts-recommended \
+            texlive-latex-extra
           pdflatex --version
         shell: bash
 
-      - name: Check
+      - name: Check R package
         id: rcmdcheck
         run: |
           .libPaths()
