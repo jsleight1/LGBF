@@ -60,11 +60,11 @@ jobs:
           which brave-browser
         shell: bash
 
-      # - name: R check
-      #   run: |
-      #     Sys. setenv(CHROMOTE_CHROME="/path/to/browser")
-      #     devtools::check()
-      #   shell: Rscript {0}
+      - name: R check
+        run: |
+          Sys. setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
+          devtools::check()
+        shell: Rscript {0}
 
       # - name: Install chrome
       #   run: |
