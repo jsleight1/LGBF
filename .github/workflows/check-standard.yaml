@@ -53,6 +53,11 @@ jobs:
           pdflatex --version
         shell: bash
 
+      - name: Install chrome
+        run: |
+          apt install chromium-browser -y
+        shell: bash
+
       # - name: Check R package
       #   id: rcmdcheck
       #   run: |
