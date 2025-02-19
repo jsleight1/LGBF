@@ -36,7 +36,7 @@ jobs:
       - name: Check
         id: rcmdcheck
         run: |
-          library(devtools)
+          .libPaths()
         shell: Rscript {0}
 
 
