@@ -37,6 +37,9 @@ jobs:
         id: rcmdcheck
         run: |
           .libPaths()
+          list.files(.libPaths()[[1]])
+          list.files(.libPaths()[[2]])
+          list.files("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu")
         shell: Rscript {0}
 
 
