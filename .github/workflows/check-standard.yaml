@@ -55,7 +55,8 @@ jobs:
 
       - name: Install chrome
         run: |
-          apt install chromium chromium-browser -y
+          apt-get install snapd -y
+          snap install chromium
         shell: bash
 
       - name: Check chrome
