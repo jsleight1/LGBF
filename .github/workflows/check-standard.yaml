@@ -40,8 +40,7 @@ jobs:
 
       - name: Install brave
         run: |
-          apt-get install curl -y
-          curl -fsS https://dl.brave.com/install.sh | sh
+          apt-get install brave-browser
         shell: bash
 
       - uses: r-lib/actions/check-r-package@v2
