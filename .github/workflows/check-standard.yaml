@@ -13,7 +13,6 @@ permissions: read-all
 jobs:
   R-CMD-check:
 
-    runs-on: ubuntu-latest
     container:
       image: docker.io/jsleight1/lgbf:R4.4.2-latest
 
