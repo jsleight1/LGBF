@@ -33,31 +33,31 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
-      - name: Add libPaths
-        run: |
-          echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
-        shell: bash
+      # - name: Add libPaths
+      #   run: |
+      #     echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
+      #   shell: bash
 
-      - name: Install R packages
-        run: |
-          install.packages(c('mockery', 'shinytest2'))
-        shell: Rscript {0}
+      # - name: Install R packages
+      #   run: |
+      #     install.packages(c('mockery', 'shinytest2'))
+      #   shell: Rscript {0}
 
-      - name: Install pdflatex
-        run: |
-          apt-get install -y \
-            texlive-latex-base \
-            texlive-fonts-extra \
-            texlive-fonts-recommended \
-            texlive-latex-extra
-          pdflatex --version
-        shell: bash
+      # - name: Install pdflatex
+      #   run: |
+      #     apt-get install -y \
+      #       texlive-latex-base \
+      #       texlive-fonts-extra \
+      #       texlive-fonts-recommended \
+      #       texlive-latex-extra
+      #     pdflatex --version
+      #   shell: bash
 
       - name: Install brave
         run: |
           apt install curl -y
           curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-          echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+          echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"| tee /etc/apt/sources.list.d/brave-browser-release.list
           apt-get install -y brave-browser
         shell: bash
 
