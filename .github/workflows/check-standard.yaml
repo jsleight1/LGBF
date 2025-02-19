@@ -41,10 +41,10 @@ jobs:
       - name: Install chrome
         run: |
           apt-get install snapd -y
+          echo "[boot] systemd=true" >> /etc/wsl.conf
           systemctl unmask snapd.service
           systemctl enable snapd.service
           systemctl start snapd.service
-          snap install chromium
         shell: bash
 
       - name: Check chrome
