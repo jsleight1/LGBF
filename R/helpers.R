@@ -11,13 +11,13 @@ download_lgbf_data <- function(x) {
 }
 
 process_data <- function(
-        data_url = "https://www.improvementservice.org.uk/__data/assets/file/0024/42369/LGBF_Files_Nov24.zip"
+        data_url = "https://www.improvementservice.org.uk/__data/assets/file/0031/56983/LGBF-Datafiles-Jan-25.zip"
     ) {
     file_path <- download_lgbf_data(data_url)
 
-    real_data <- read_csv(paste0(file_path, "/LGBF_Data_Table_Real.csv"))
+    real_data <- read_csv(paste0(file_path, "/LGBF_Datafiles/LGBF_Data_Table_Real.csv"))
 
-    meta <- read_csv(paste0(file_path, "/Indicators_Information.csv"))
+    meta <- read_csv(paste0(file_path, "/LGBF_Datafiles/Indicators_Information.csv"))
 
     req_meta_cols <- c(
         "Indicators_Information_Code",
