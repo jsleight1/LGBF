@@ -30,8 +30,7 @@ USER app
 
 COPY . .
 RUN R -e "renv::restore()"
-RUN R -e "install.packages(c('devtools', 'rcmdcheck'))"
-RUN R -e "install.packages(c('mockery', 'shinytest2'))"
+RUN R -e "install.packages(c('devtools', 'rcmdcheck', 'mockery', 'shinytest2'))"
 
 EXPOSE 9001
 
