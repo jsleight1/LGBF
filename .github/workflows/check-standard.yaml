@@ -33,15 +33,42 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
-      # - name: Add libPaths
-      #   run: |
-      #     echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
-      #   shell: bash
+      - name: Add libPaths
+        run: |
+          echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
+        shell: bash
+
+      - name: Install R packages
+        run: |
+          install.packages(c('mockery', 'shinytest2'))
+        shell: Rscript {0}
+
+      - name: Install pdflatex
+        run: |
+          apt-get install -y \
+            texlive-latex-base \
+            texlive-fonts-extra \
+            texlive-fonts-recommended \
+            texlive-latex-extra
+          pdflatex --version
+        shell: bash
 
       - name: Install brave
         run: |
           apt-get install brave-browser
         shell: bash
+
+      # - name: Install chrome
+      #   run: |
+      #     apt-get install snapd -y
+      #     snap install chromium
+      #   shell: bash
+
+      # - name: Check chrome
+      #   run: |
+      #     library(chromote)
+      #     chromote_info()
+      #   shell: Rscript {0}
 
       - uses: r-lib/actions/check-r-package@v2
         with:
