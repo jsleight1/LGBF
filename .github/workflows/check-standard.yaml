@@ -33,11 +33,12 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
-      # - name: Check
-      #   id: install
-      #   run: |
-      #     install.packages("rcmdcheck")
-      #   shell: Rscript {0}
+      - name: Check
+        id: rcmdcheck
+        run: |
+          library(devtools)
+        shell: Rscript {0}
+
 
       # - uses: r-lib/actions/setup-r-dependencies@v2
       #   with:
