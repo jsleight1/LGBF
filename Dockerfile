@@ -26,6 +26,7 @@ USER app
 
 COPY . .
 RUN R -e "renv::restore()"
+RUN R -e "install.packages(c('devtools', 'rcmdcheck'))"
 
 EXPOSE 9001
 
