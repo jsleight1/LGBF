@@ -45,7 +45,7 @@ jobs:
 
       - name: Install pdflatex
         run: |
-          apt-get install texlive-latex-base
+          apt-get install texlive-latex-base -y
           pdflatex --version
         shell: bash
 
