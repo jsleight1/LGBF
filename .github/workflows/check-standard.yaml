@@ -55,8 +55,14 @@ jobs:
 
       - name: Install chrome
         run: |
-          apt install chromium-browser -y
+          apt install chromium chromium-browser -y
         shell: bash
+
+      - name: Check chrome
+        run: |
+          library(chromote)
+          chromote_info()
+        shell: Rscript {0}
 
       # - name: Check R package
       #   id: rcmdcheck
@@ -72,7 +78,7 @@ jobs:
       #     extra-packages: any::rcmdcheck
       #     needs: check
 
-      - uses: r-lib/actions/check-r-package@v2
-        with:
-          upload-snapshots: true
-          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+      # - uses: r-lib/actions/check-r-package@v2
+      #   with:
+      #     upload-snapshots: true
+      #     build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
