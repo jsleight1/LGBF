@@ -14,7 +14,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libjpeg-dev \
     libxml2-dev \
     libgit2-dev \
-    git
+    git \
+    texlive-latex-base \
+    texlive-fonts-extra \
+    texlive-fonts-recommended \
+    texlive-latex-extra
 
 RUN addgroup --system app && adduser --system --ingroup app app
 RUN mkdir /home/app
