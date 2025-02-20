@@ -2,6 +2,7 @@ ARG RVERSION=4.4.2
 FROM rocker/r-ver:$RVERSION
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+    curl \
     libz-dev \
     libcurl4-openssl-dev \
     libssl-dev \
@@ -19,6 +20,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     texlive-fonts-extra \
     texlive-fonts-recommended \
     texlive-latex-extra
+
+RUN curl -fsS https://dl.brave.com/install.sh | sh
 
 RUN addgroup --system app && adduser --system --ingroup app app
 RUN mkdir /home/app

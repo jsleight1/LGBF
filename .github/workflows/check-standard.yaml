@@ -33,38 +33,38 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
-      - name: Add libPaths
-        run: |
-          echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
-        shell: bash
+      # - name: Add libPaths
+      #   run: |
+      #     echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
+      #   shell: bash
 
-      - name: Install R packages
-        run: |
-          install.packages(c('rcmdcheck', 'mockery', 'shinytest2'))
-        shell: Rscript {0}
+      # - name: Install R packages
+      #   run: |
+      #     install.packages(c('rcmdcheck', 'mockery', 'shinytest2'))
+      #   shell: Rscript {0}
 
-      - name: Install pdflatex
-        run: |
-          apt-get install -y \
-            texlive-latex-base \
-            texlive-fonts-extra \
-            texlive-fonts-recommended \
-            texlive-latex-extra
-          pdflatex --version
-        shell: bash
+      # - name: Install pdflatex
+      #   run: |
+      #     apt-get install -y \
+      #       texlive-latex-base \
+      #       texlive-fonts-extra \
+      #       texlive-fonts-recommended \
+      #       texlive-latex-extra
+      #     pdflatex --version
+      #   shell: bash
 
-      - name: Install brave
-        run: |
-          apt install curl -y
-          curl -fsS https://dl.brave.com/install.sh | sh
-          which brave-browser
-        shell: bash
+      # - name: Install brave
+      #   run: |
+      #     apt install curl -y
+      #     curl -fsS https://dl.brave.com/install.sh | sh
+      #     which brave-browser
+      #   shell: bash
 
-      - name: R check
-        run: |
-          Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
-          check_results <- rcmdcheck::rcmdcheck()
-        shell: Rscript {0}
+      # - name: R check
+      #   run: |
+      #     Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
+      #     check_results <- rcmdcheck::rcmdcheck()
+      #   shell: Rscript {0}
 
       # - name: Install chrome
       #   run: |
@@ -78,7 +78,7 @@ jobs:
       #     chromote_info()
       #   shell: Rscript {0}
 
-      # - uses: r-lib/actions/check-r-package@v2
-      #   with:
-      #     upload-snapshots: true
-      #     build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
+          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
