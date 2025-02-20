@@ -45,6 +45,7 @@ jobs:
 
       - name: Test coverage
         run: |
+          list.files(file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package"), full.names = TRUE)
           cov <- covr::package_coverage(
             quiet = FALSE,
             clean = FALSE,
