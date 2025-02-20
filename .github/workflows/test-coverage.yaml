@@ -45,6 +45,7 @@ jobs:
 
       - name: Test coverage
         run: |
+          dir.create("/home/runner/work")
           Sys.setenv("RUNNER_TEMP" = "/home/runner/work")
           cov <- covr::package_coverage(
             quiet = FALSE,
