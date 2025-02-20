@@ -51,14 +51,13 @@ jobs:
             install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
           covr::to_cobertura(cov)
-          list.files()
-          getwd()
+          list.files(full.names = TRUE)
         shell: Rscript {0}
 
       - uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-          file: /home/app/cobertura.xml
+          file: /__w/LGBF/LGBF/cobertura.xml
           plugin: noop
           disable_search: true
           token: ${{ secrets.CODECOV_TOKEN }}
