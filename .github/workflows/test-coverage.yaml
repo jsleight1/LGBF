@@ -45,13 +45,13 @@ jobs:
 
       - name: Test coverage
         run: |
-          list.files(file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package"), full.names = TRUE)
           cov <- covr::package_coverage(
             quiet = FALSE,
             clean = FALSE,
             install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
           covr::to_cobertura(cov)
+          list.files(file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package"), full.names = TRUE)
           list.files(full.names = TRUE)
         shell: Rscript {0}
 
