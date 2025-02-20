@@ -45,13 +45,11 @@ jobs:
 
       - name: Test coverage
         run: |
-          devtools::test()
           cov <- covr::package_coverage(
             quiet = FALSE,
             clean = FALSE,
             install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
-          utils::str(cov)
           covr::to_cobertura(cov)
           list.files(file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package"), full.names = TRUE)
           list.files(full.names = TRUE)
@@ -60,7 +58,7 @@ jobs:
       - uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-          file: /__w/LGBF/LGBF/cobertura.xml
+          file: ./cobertura.xml
           plugin: noop
           disable_search: true
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -71,7 +69,8 @@ jobs:
         if: always()
         run: |
           ## --------------------------------------------------------------------
-          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+          ls -lth /__w/_temp/
+          find '/__w/_temp//package' -name 'testthat.Rout*' -exec cat '{}' \; || true
         shell: bash
 
       - name: Upload test results
@@ -79,4 +78,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-test-failures
-          path: ${{ runner.temp }}/package
+          path: /__w/_temp//package
