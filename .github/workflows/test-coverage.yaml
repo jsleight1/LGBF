@@ -45,6 +45,7 @@ jobs:
 
       - name: Test coverage
         run: |
+          Sys.getenv("RUNNER_TEMP" = "/home/runner/work")
           cov <- covr::package_coverage(
             quiet = FALSE,
             clean = FALSE,
@@ -52,8 +53,6 @@ jobs:
           )
           covr::to_cobertura(cov)
         shell: Rscript {0}
-        env:
-          R_LIBS_USER: /home/runner/work/_temp/Library
 
       - uses: codecov/codecov-action@v4
         with:
