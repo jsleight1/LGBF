@@ -9,3 +9,4 @@ rsconnect/
 _disable_autoload.R
 ^Makefile$
 ^Dockerfile$
+^.cache$
