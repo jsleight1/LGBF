@@ -50,6 +50,7 @@ jobs:
             clean = FALSE,
             install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
+          utils::str(cov)
           covr::to_cobertura(cov)
           list.files(file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package"), full.names = TRUE)
           list.files(full.names = TRUE)
