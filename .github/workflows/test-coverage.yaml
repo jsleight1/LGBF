@@ -18,6 +18,7 @@ jobs:
       options: --user root
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_LIBS_USER: /home/runner/work/_temp/Library
 
     steps:
       - uses: actions/checkout@v4
