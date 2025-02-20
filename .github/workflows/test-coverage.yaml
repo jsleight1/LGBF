@@ -58,7 +58,7 @@ jobs:
       - uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-          file: ./cobertura.xml
+          files: /__w/LGBF/LGBF/cobertura.xml
           plugin: noop
           disable_search: true
           token: ${{ secrets.CODECOV_TOKEN }}
