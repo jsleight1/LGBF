@@ -40,9 +40,10 @@ jobs:
             clean = FALSE,
             install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
-          # covr::to_cobertura(cov)
+          covr::to_cobertura(cov)
           cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
           fontawesome::fa_html_dependency()
+          print(cov)
         shell: Rscript {0}
 
       # - uses: codecov/codecov-action@v4
