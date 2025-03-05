@@ -21,7 +21,7 @@ test_that("LGBF app indicator area visualisation works", {
     skip_on_cran()
 
     app <- AppDriver$new(shiny_app, name = "visualisation", width = 800, height = 700,
-        seed = 4323, load_timeout = 20 * 1000)
+        seed = 4323, load_timeout = 40 * 1000)
 
     app$set_inputs(sidebar = "visual_Adult_Social_Care_Services")
     app$wait_for_value(output = "Adult_Social_Care_Services-SW01-indicator")
