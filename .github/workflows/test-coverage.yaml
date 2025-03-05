@@ -32,11 +32,6 @@ jobs:
           echo '.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' >> .Rprofile
         shell: bash
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: any::covr, any::xml2
-          needs: coverage
-
       - name: Test coverage
         run: |
           devtools::check()
@@ -46,8 +41,8 @@ jobs:
             install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
           )
           # covr::to_cobertura(cov)
-          # cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
-          covr::package_coverage()
+          cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
+          fontawesome::fa_html_dependency()
         shell: Rscript {0}
 
       # - uses: codecov/codecov-action@v4
