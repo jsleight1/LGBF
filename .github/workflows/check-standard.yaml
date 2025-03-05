@@ -33,6 +33,11 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
+      - name: Add libPaths
+        run: |
+          echo '.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' >> .Rprofile
+        shell: bash
+
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
