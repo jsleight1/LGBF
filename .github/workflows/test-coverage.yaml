@@ -28,16 +28,6 @@ jobs:
           r-version: '4.4.2'
           install-r: false
 
-      - name: Install gnupg
-        run: |
-          apt-get install -y gnupg
-        shell: bash
-
-      - name: Add libPaths
-        run: |
-          echo '.libPaths(c("/home/app/.cache/R/renv/library/app-8276b005/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu", "/home/app/.cache/R/renv/sandbox/linux-ubuntu-noble/R-4.4/aarch64-unknown-linux-gnu/25ebdc09"))' >> .Rprofile
-        shell: bash
-
       - name: Test coverage
         run: |
           cov <- covr::package_coverage(

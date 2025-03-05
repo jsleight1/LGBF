@@ -17,6 +17,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libxml2-dev \
     libgit2-dev \
     git \
+    gnupg \
+    sudo \
     texlive-latex-base \
     texlive-fonts-extra \
     texlive-fonts-recommended \
@@ -31,15 +33,17 @@ RUN mkdir /home/app
 RUN chown app:app /home/app
 ENV HOME=/home/app
 WORKDIR /home/app
-USER app
 
 # Install packages required for LGBF
 COPY . .
+RUN rm -rf .Rprofile renv
+RUN Rscript -e "install.packages('renv')"
 RUN R -e "renv::restore()"
 
 # Install packages required for development and testing
-RUN R -e "install.packages(c('devtools', 'rcmdcheck', 'mockery', 'shinytest2', 'covr', 'xml2'))"
+RUN Rscript -e "install.packages(c('devtools', 'rcmdcheck', 'mockery', 'shinytest2', 'covr', 'xml2'))"
 
 # Expose port and run shiny application
+USER app
 EXPOSE 9001
 CMD ["R", "-e", "shiny::runApp()"]
