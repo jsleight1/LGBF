@@ -42,6 +42,7 @@ jobs:
           )
           covr::to_cobertura(cov)
           cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
+          rlang::last_error()$app
         shell: Rscript {0}
 
       - uses: codecov/codecov-action@v4
