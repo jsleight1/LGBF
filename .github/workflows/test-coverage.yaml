@@ -18,7 +18,6 @@ jobs:
       options: --user root
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      R_LIBS_USER: /home/runner/work/_temp/Library
 
     steps:
       - uses: actions/checkout@v4
@@ -41,7 +40,7 @@ jobs:
       - uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-          file: /__w/LGBF/LGBF/cobertura.xml
+          file: ./cobertura.xml
           plugin: noop
           disable_search: true
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -51,7 +50,7 @@ jobs:
         if: always()
         run: |
           ## --------------------------------------------------------------------
-          find '/__w/_temp/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
         shell: bash
 
       - name: Upload test results
@@ -59,4 +58,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-test-failures
-          path: /__w/_temp/package
+          path: ${{ runner.temp }}/package
