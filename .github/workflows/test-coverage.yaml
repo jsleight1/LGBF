@@ -35,34 +35,35 @@ jobs:
       - name: Test coverage
         run: |
           devtools::check()
-          cov <- covr::package_coverage(
-            quiet = FALSE,
-            clean = FALSE,
-            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
-          )
-          covr::to_cobertura(cov)
-          cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
+          # cov <- covr::package_coverage(
+          #   quiet = FALSE,
+          #   clean = FALSE,
+          #   install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
+          # )
+          # covr::to_cobertura(cov)
+          # cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
+          covr::package_coverage()
         shell: Rscript {0}
 
-      - uses: codecov/codecov-action@v4
-        with:
-          fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-          file: ./cobertura.xml
-          plugin: noop
-          disable_search: true
-          token: ${{ secrets.CODECOV_TOKEN }}
-          os: linux-arm64
+      # - uses: codecov/codecov-action@v4
+      #   with:
+      #     fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
+      #     file: ./cobertura.xml
+      #     plugin: noop
+      #     disable_search: true
+      #     token: ${{ secrets.CODECOV_TOKEN }}
+      #     os: linux-arm64
 
-      - name: Show testthat output
-        if: always()
-        run: |
-          ## --------------------------------------------------------------------
-          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
-        shell: bash
+      # - name: Show testthat output
+      #   if: always()
+      #   run: |
+      #     ## --------------------------------------------------------------------
+      #     find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+      #   shell: bash
 
-      - name: Upload test results
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-test-failures
-          path: ${{ runner.temp }}/package
+      # - name: Upload test results
+      #   if: failure()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: coverage-test-failures
+      #     path: ${{ runner.temp }}/package
