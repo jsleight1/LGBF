@@ -18,6 +18,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libgit2-dev \
     git \
     gnupg \
+    pandoc \
     sudo \
     texlive-latex-base \
     texlive-fonts-extra \
@@ -35,7 +36,7 @@ ENV HOME=/home/app
 WORKDIR /home/app
 
 # Install packages required for LGBF
-COPY . .
+RUN git clone https://github.com/jsleight1/LGBF.git .
 RUN rm -rf .Rprofile renv
 RUN Rscript -e "install.packages('renv')"
 RUN R -e "renv::restore()"
