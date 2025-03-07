@@ -42,7 +42,7 @@ jobs:
       - name: Test
         run: |
           list.files()
-          devtools::install(".")
+          devtools::install(".", upgrade = "never")
           devtools::test()
           devtools::check()
         shell: Rscript {0}
