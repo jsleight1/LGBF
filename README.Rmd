@@ -36,6 +36,9 @@ devtools::install_github("jsleight1/LGBF")
 LGBF also contains a `renv.lock` file which can be used to create
 a reproducible environment using [renv](https://rstudio.github.io/renv/articles/renv.html).
 
+Alternatively, a docker image is available avaiable from
+[docker.io](https://hub.docker.com/r/jsleight1/lgbf).
+
 ## Example
 
 The shiny application can be launched locally using:
@@ -44,6 +47,21 @@ The shiny application can be launched locally using:
 library(LGBF)
 LGBF()
 ```
+
+A dockerised version of the application can be launched using:
+
+```
+docker run -p 9001:9001 -it docker.io/jsleight1/lgbf:R4.4.2-latest
+```
+
+The application can then be viewed at:
+
+```
+http://localhost:9001/
+```
+
+***Please note the docker image is only avaiable for linux/arm64 OS
+architectures.***
 
 ## Data and references.
 
