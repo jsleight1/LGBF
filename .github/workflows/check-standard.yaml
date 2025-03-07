@@ -46,6 +46,12 @@ jobs:
           Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
           library(chromote)
           s1 <- ChromoteSession$new()
+          s1$parent$debug_messages(TRUE)
+          s2 <- ChromoteSession$new()
+          chromote_info()
+          install.packages("rvest")
+          x <- read_html_live("https://opencritic.com/")
+          x
           # devtools::test()
           # devtools::check()
         shell: Rscript {0}
