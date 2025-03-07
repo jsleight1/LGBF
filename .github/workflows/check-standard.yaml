@@ -42,34 +42,9 @@ jobs:
       - name: Test
         run: |
           list.files()
-          # devtools::install(".", upgrade = "never")
+          devtools::install(".", upgrade = "never")
           Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
-
-          library(shinytest2)
-
-          library(shiny)
-          ui <- fluidPage(
-            textInput("name", "What is your name?"),
-            actionButton("greet", "Greet"),
-            textOutput("greeting")
-          )
-          server <- function(input, output, session) {
-            output$greeting <- renderText({
-              req(input$greet)
-              paste0("Hello ", isolate(input$name), "!")
-            })
-          }
-
-          shiny_app <- shinyApp(ui, server)
-
-
-          app <- AppDriver$new(shiny_app, name = "initial", width = 800, height = 700,
-            seed = 4323)
-
-          app$set_inputs(name = "Barret")
-          app$click("greet")
-
-          # devtools::test()
+          devtools::test()
           # devtools::check()
         shell: Rscript {0}
 
