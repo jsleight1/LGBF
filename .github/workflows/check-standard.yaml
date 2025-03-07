@@ -44,12 +44,19 @@ jobs:
           list.files()
           devtools::install(".", upgrade = "never")
           Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
-          install.packages('chromote', repos = c('https://rstudio.r-universe.dev', 'https://cloud.r-project.org'))
-          chromote::local_chrome_version(binary = "chrome-headless-shell", quiet = FALSE)
-          library(chromote)
-          s1 <- ChromoteSession$new()
-          s1$parent$debug_messages(TRUE)
-          s2 <- ChromoteSession$new()
+
+          library(LGBF)
+          library(shinytest2)
+          library(testthat)
+          library(mockery)
+
+          with_mocked_bindings(
+              process_data = function() LGBF::example_indicator_data,
+              shiny_app <- LGBF()
+          )
+
+          app <- AppDriver$new(shiny_app, name = "initial", width = 800, height = 700,
+            seed = 4323)
 
           # devtools::test()
           # devtools::check()
