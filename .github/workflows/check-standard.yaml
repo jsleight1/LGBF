@@ -47,18 +47,27 @@ jobs:
 
           library(LGBF)
           library(shinytest2)
-          library(testthat)
-          library(mockery)
 
-          with_mocked_bindings(
-              process_data = function() LGBF::example_indicator_data,
-              shiny_app <- LGBF()
+          library(shiny)
+          ui <- fluidPage(
+            textInput("name", "What is your name?"),
+            actionButton("greet", "Greet"),
+            textOutput("greeting")
           )
+          server <- function(input, output, session) {
+            output$greeting <- renderText({
+              req(input$greet)
+              paste0("Hello ", isolate(input$name), "!")
+            })
+          }
+
+          shiny_app <- shinyApp(ui, server)
+
 
           app <- AppDriver$new(shiny_app, name = "initial", width = 800, height = 700,
             seed = 4323)
 
-          # devtools::test()
+          devtools::test()
           # devtools::check()
         shell: Rscript {0}
 
