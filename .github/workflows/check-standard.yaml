@@ -44,14 +44,13 @@ jobs:
           list.files()
           devtools::install(".", upgrade = "never")
           Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
+          install.packages('chromote', repos = c('https://rstudio.r-universe.dev', 'https://cloud.r-project.org'))
+          chromote::local_chrome_version(binary = "chrome-headless-shell", quiet = FALSE)
           library(chromote)
           s1 <- ChromoteSession$new()
           s1$parent$debug_messages(TRUE)
           s2 <- ChromoteSession$new()
-          chromote_info()
-          install.packages("rvest")
-          x <- read_html_live("https://opencritic.com/")
-          x
+
           # devtools::test()
           # devtools::check()
         shell: Rscript {0}
