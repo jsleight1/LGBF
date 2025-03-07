@@ -42,10 +42,9 @@ jobs:
       - name: Test
         run: |
           list.files()
-          devtools::install(".", upgrade = "never")
+          # devtools::install(".", upgrade = "never")
           Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
 
-          library(LGBF)
           library(shinytest2)
 
           library(shiny)
