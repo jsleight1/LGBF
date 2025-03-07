@@ -43,6 +43,7 @@ jobs:
         run: |
           list.files()
           devtools::install(".", upgrade = "never")
+          Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
           library(chromote)
           s1 <- ChromoteSession$new()
           # devtools::test()
