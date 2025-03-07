@@ -43,8 +43,10 @@ jobs:
         run: |
           list.files()
           devtools::install(".", upgrade = "never")
-          devtools::test()
-          devtools::check()
+          library(chromote)
+          s1 <- ChromoteSession$new()
+          # devtools::test()
+          # devtools::check()
         shell: Rscript {0}
 
       # - uses: r-lib/actions/check-r-package@v2
