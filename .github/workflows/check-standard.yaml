@@ -66,7 +66,8 @@ jobs:
           app <- AppDriver$new(shiny_app, name = "initial", width = 800, height = 700,
             seed = 4323)
 
-          app$expect_values()
+          app$set_inputs(name = "Barret")
+          app$click("greet")
 
           # devtools::test()
           # devtools::check()
