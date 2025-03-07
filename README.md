@@ -7,7 +7,7 @@
 
 [![R-CMD-check](https://github.com/jsleight1/LGBF/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/jsleight1/LGBF/actions/workflows/check-standard.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/jsleight1/LGBF/branch/3-dockerise-app/graph/badge.svg)](https://app.codecov.io/gh/jsleight1/LGBF/?branch=3-dockerise-app)
+coverage](https://codecov.io/gh/jsleight1/LGBF/branch/main/graph/badge.svg)](https://app.codecov.io/gh/jsleight1/LGBF/?branch=main)
 <!-- badges: end -->
 
 This repo contains an R package to create the
