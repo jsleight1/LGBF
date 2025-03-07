@@ -20,51 +20,48 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      # - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # - uses: r-lib/actions/setup-r@v2.11.0
-      #   with:
-      #     r-version: '4.4.2'
-      #     install-r: false
+      - uses: r-lib/actions/setup-r@v2.11.0
+        with:
+          r-version: '4.4.2'
+          install-r: false
 
-      # - name: Add libPaths
-      #   run: |
-      #     echo '\n.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' >> .Rprofile
-      #   shell: bash
+      - name: Add libPaths
+        run: |
+          echo -e '.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' > .Rprofile
+        shell: bash
 
-      # - name: Test coverage
-      #   run: |
-      #     devtools::check()
-      #     cov <- covr::package_coverage(
-      #       quiet = FALSE,
-      #       clean = FALSE,
-      #       install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
-      #     )
-      #     covr::to_cobertura(cov)
-      #     cat("/__w/_temp/package/LGBF/LGBF-tests/testthat.Rout.fail")
-      #     fontawesome::fa_html_dependency()
-      #     print(cov)
-      #   shell: Rscript {0}
+      - name: Test coverage
+        run: |
+          devtools::check()
+          cov <- covr::package_coverage(
+            quiet = FALSE,
+            clean = FALSE,
+            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
+          )
+          covr::to_cobertura(cov)
+        shell: Rscript {0}
 
-      # - uses: codecov/codecov-action@v4
-      #   with:
-      #     fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
-      #     file: ./cobertura.xml
-      #     plugin: noop
-      #     disable_search: true
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      #     os: linux-arm64
+      - uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: ${{ github.event_name != 'pull_request' && true || false }}
+          file: ./cobertura.xml
+          plugin: noop
+          disable_search: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          os: linux-arm64
 
-      # - name: Show testthat output
-      #   if: always()
-      #   run: |
-      #     ## --------------------------------------------------------------------
-      #     find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
-      #   shell: bash
+      - name: Show testthat output
+        if: always()
+        run: |
+          ## --------------------------------------------------------------------
+          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+        shell: bash
 
-      # - name: Upload test results
-      #   if: failure()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: coverage-test-failures
-      #     path: ${{ runner.temp }}/package
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-test-failures
+          path: ${{ runner.temp }}/package

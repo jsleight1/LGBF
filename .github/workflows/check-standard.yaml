@@ -35,20 +35,10 @@ jobs:
 
       - name: Add libPaths
         run: |
-          echo -e '\n.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' > .Rprofile
-          cat .Rprofile
+          echo -e '.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' > .Rprofile
         shell: bash
 
-      - name: Test
-        run: |
-          list.files()
-          devtools::install(".", upgrade = "never")
-          Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
-          devtools::test()
-          # devtools::check()
-        shell: Rscript {0}
-
-      # - uses: r-lib/actions/check-r-package@v2
-      #   with:
-      #     upload-snapshots: true
-      #     build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+      - uses: r-lib/actions/check-r-package@v2
+        with:
+          upload-snapshots: true
+          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
