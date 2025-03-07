@@ -41,6 +41,8 @@ jobs:
 
       - name: Test
         run: |
+          list.files()
+          devtools::install(".")
           devtools::test()
           devtools::check()
         shell: Rscript {0}
