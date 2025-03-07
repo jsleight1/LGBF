@@ -35,7 +35,7 @@ jobs:
 
       - name: Add libPaths
         run: |
-          echo '\\n.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' >> .Rprofile
+          echo -e '\n.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' >> .Rprofile
         shell: bash
 
       - uses: r-lib/actions/check-r-package@v2
