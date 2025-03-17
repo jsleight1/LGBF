@@ -46,7 +46,7 @@ jobs:
           build \
           --progress=plain \
           --platform linux/arm64 \
-          -t jsleight1/lgbf:test
+          -t jsleight1/lgbf:test \
           -f Dockerfile \
           --push \
           .
