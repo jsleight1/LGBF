@@ -42,6 +42,9 @@ jobs:
     - name:
       run: |
         echo "FROM rocker/r-ver:4.4.2" > Dockerfile
+
+        docker context ls
+        ls -lth /usr/libexec/docker/cli-plugins/docker-buildx
         docker buildx \
           build \
           --progress=plain \
