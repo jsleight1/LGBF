@@ -22,9 +22,8 @@ jobs:
 
     - name: Get R package version
       run: |
-        ls -lth
-        # version=$(grep Version DESCRIPTION | grep -o "[0-9.]\+")
-        # echo "packageVersion=${version}" >> $GITHUB_ENV
+        version=$(grep Version DESCRIPTION | grep -o "[0-9.]\+")
+        echo "packageVersion=${version}" >> $GITHUB_ENV
       shell: bash {0}
 
     - name: Print R package version
