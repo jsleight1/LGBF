@@ -26,29 +26,20 @@ jobs:
         echo "packageVersion=${version}" >> $GITHUB_ENV
       shell: bash {0}
 
-    - name: Print R package version
-      run: |
-        echo ${{ env.packageVersion }}
-      shell: bash {0}
-
-    - name: Set up R version
-      run: |
-        echo "RVERSION=4.4.2" >> $GITHUB_ENV
-      shell: bash {0}
-
-    - name: Set up date
+    - name: Get current date
       run: |
         echo "DATE=`date +%Y%m%d`" >> $GITHUB_ENV
       shell: bash {0}
 
-    # - name: Set up Docker Buildx
-    #   uses: docker/setup-buildx-action@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
 
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
-        context: .
-        push: false
+        push: true
+        build-args: |
+          RVERSION=4.4.2
         tags: jsleight1/lgbf:test
         # tags: |
         #     ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-latest
