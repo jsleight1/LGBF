@@ -39,13 +39,25 @@ jobs:
       with:
         buildkitd-flags: --debug
 
-    - name: Build and push
-      uses: docker/build-push-action@v6
-      with:
-        push: true
-        build-args: |
-          RVERSION=4.4.2
-        tags: jsleight1/lgbf:test
+    - name:
+      run: |
+        echo "FROM rocker/r-ver:4.4.2" > Dockerfile
+        docker buildx \
+          build \
+          --progress=plain \
+          --platform linux/arm64 \
+          -t jsleight1/lgbf:test
+          -f Dockerfile \
+          --push \
+          .
+
+    # - name: Build and push
+    #   uses: docker/build-push-action@v6
+    #   with:
+    #     push: true
+    #     build-args: |
+    #       RVERSION=4.4.2
+    #     tags: jsleight1/lgbf:test
         # tags: |
         #     ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-latest
         #     ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-${{ env.DATE }}
