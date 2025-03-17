@@ -44,6 +44,6 @@ jobs:
         build-args: |
           RVERSION=4.4.2
         tags: |
-          {{ env.packageVersion }}-latest
-          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R4.4.2-{{ env.packageVersion }}-${{ env.DATE }}
+          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R4.4.2-${{ env.packageVersion }}-latest
+          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R4.4.2-${{ env.packageVersion }}-${{ env.DATE }}
 
