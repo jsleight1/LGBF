@@ -49,7 +49,8 @@ jobs:
       with:
         context: .
         push: false
-        tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-${{ env.DATE }}
+        tags: jsleight1/lgbf:test
+        # tags: |
+        #     ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-latest
+        #     ${{ secrets.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-{{ env.packageVersion }}-${{ env.DATE }}
 
