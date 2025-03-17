@@ -26,5 +26,5 @@ jobs:
 
     - name: Print R package version
       run: |
-        ehco ${{ env.packageVersion }}
+        echo ${{ env.packageVersion }}
       shell: bash {0}
