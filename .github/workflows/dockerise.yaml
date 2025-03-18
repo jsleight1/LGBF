@@ -1,7 +1,7 @@
 
 on:
   push:
-    branches: [main]
+    branches: [6-build-docker-image-using-ci]
 
 name: dockerise.yaml
 
@@ -40,6 +40,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
+        platforms: linux/arm64,linux/amd64
         push: true
         build-args: |
           RVERSION=4.4.2
