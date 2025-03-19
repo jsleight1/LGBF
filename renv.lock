@@ -189,6 +189,12 @@
       ],
       "Hash": "d7e13f49c19103ece9e58ad2d83a7354"
     },
+    "chromote": {
+      "Package": "chromote",
+      "Version": "0.4.0.9000",
+      "Source": "Repository",
+      "Repository": "GitHub"
+    },
     "cli": {
       "Package": "cli",
       "Version": "3.6.3",

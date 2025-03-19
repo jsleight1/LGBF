@@ -35,6 +35,7 @@ Imports:
     tidyr,
     utils
 Suggests:
+    chromote (>= 0.4.0.9000),
     mockery,
     pkgload,
     shinytest2,
