@@ -37,7 +37,7 @@ RUN addgroup --system app && adduser --system --ingroup app app
 RUN mkdir /home/app
 RUN chown app:app /home/app
 ENV HOME=/home/app
-WORKDIR /home/app
+# WORKDIR /home/app
 
 # Install packages required for LGBF
 RUN git clone https://github.com/jsleight1/LGBF.git .
