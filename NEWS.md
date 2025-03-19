@@ -1,3 +1,6 @@
+# lgbf v1.0.2
+
+* Add `dockerise.yaml` for automating docker image build
 
 # lgbf v1.0.1
 
