@@ -42,11 +42,15 @@ RUN if [ "$TARGETPLATFORM" = "amd64" ]; then apt update && apt install -y google
 # Install packages required for LGBF
 RUN git clone https://github.com/jsleight1/LGBF.git \
     && cd LGBF \
-    && git checkout -b '6-build-docker-image-using-ci' 'origin/6-build-docker-image-using-ci'
-RUN rm -rf .Rprofile renv
-RUN ls -lth
-RUN Rscript -e "install.packages('renv')"
-RUN R -e "renv::restore()"
+    && git checkout -b '6-build-docker-image-using-ci' 'origin/6-build-docker-image-using-ci' \
+    && rm -rf .Rprofile renv \
+    && Rscript -e "install.packages('renv')" \
+    && R -e "renv::restore()"
+
+# RUN rm -rf .Rprofile renv
+# RUN ls -lth
+# RUN Rscript -e "install.packages('renv')"
+# RUN R -e "renv::restore()"
 
 # Install packages required for development and testing
 RUN Rscript -e "install.packages(c('devtools', 'rcmdcheck', 'mockery', 'shinytest2', 'covr', 'xml2'))"
