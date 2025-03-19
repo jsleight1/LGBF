@@ -39,7 +39,6 @@ WORKDIR /home/app
 # Install packages required for LGBF
 RUN git clone https://github.com/jsleight1/LGBF.git .
 RUN rm -rf .Rprofile renv
-RUN ls -lth
 RUN Rscript -e "install.packages('renv')"
 RUN R -e "renv::restore()"
 
