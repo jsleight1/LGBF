@@ -13,6 +13,7 @@ jobs:
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      RVERSION: 4.4.2
 
     steps:
     - uses: actions/checkout@v4
@@ -46,9 +47,9 @@ jobs:
         platforms: linux/arm64, linux/amd64
         push: true
         build-args: |
-          RVERSION=4.4.2
+          RVERSION=${{ env.RVersion }}
         tags: |
           ${{ vars.DOCKERHUB_USERNAME }}/lgbf:latest
-          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R4.4.2-v${{ env.packageVersion }}-latest
-          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R4.4.2-v${{ env.packageVersion }}-${{ env.DATE }}
+          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-v${{ env.packageVersion }}-latest
+          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-v${{ env.packageVersion }}-${{ env.DATE }}
 

@@ -1,5 +1,4 @@
 ARG RVERSION=4.4.2
-ARG TARGETPLATFORM
 FROM rocker/r-ver:$RVERSION
 
 # Install various libraries required for R packages
