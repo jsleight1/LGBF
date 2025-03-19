@@ -29,28 +29,19 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 # Install brave-browser required for shinytest2
 RUN curl -fsS https://dl.brave.com/install.sh | sh
 
-# Install chrome on amd64 architectures. This is not possible for arm64.
-RUN if [ "$TARGETPLATFORM" = "amd64" ]; then apt update && apt install -y google-chrome-stable; fi;
-
 # Run application as 'app' user.
-# RUN addgroup --system app && adduser --system --ingroup app app
-# RUN mkdir /home/app
-# RUN chown app:app /home/app
-# ENV HOME=/home/app
-# WORKDIR /home/app
+RUN addgroup --system app && adduser --system --ingroup app app
+RUN mkdir /home/app
+RUN chown app:app /home/app
+ENV HOME=/home/app
+WORKDIR /home/app
 
 # Install packages required for LGBF
-RUN git clone https://github.com/jsleight1/LGBF.git \
-    && cd LGBF \
-    && git checkout -b '6-build-docker-image-using-ci' 'origin/6-build-docker-image-using-ci' \
-    && rm -rf .Rprofile renv \
-    && Rscript -e "install.packages('renv')" \
-    && R -e "renv::restore()"
-
-# RUN rm -rf .Rprofile renv
-# RUN ls -lth
-# RUN Rscript -e "install.packages('renv')"
-# RUN R -e "renv::restore()"
+RUN git clone https://github.com/jsleight1/LGBF.git .
+RUN rm -rf .Rprofile renv
+RUN ls -lth
+RUN Rscript -e "install.packages('renv')"
+RUN R -e "renv::restore()"
 
 # Expose port and run shiny application
 USER app
