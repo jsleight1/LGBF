@@ -47,9 +47,9 @@ jobs:
         platforms: linux/arm64, linux/amd64
         push: true
         build-args: |
-          RVERSION=${{ env.RVersion }}
+          RVERSION=${{ env.RVERSION }}
         tags: |
           ${{ vars.DOCKERHUB_USERNAME }}/lgbf:latest
-          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-v${{ env.packageVersion }}-latest
-          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVersion }}-v${{ env.packageVersion }}-${{ env.DATE }}
+          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVERSION }}-v${{ env.packageVersion }}-latest
+          ${{ vars.DOCKERHUB_USERNAME }}/lgbf:R${{ env.RVERSION }}-v${{ env.packageVersion }}-${{ env.DATE }}
 
