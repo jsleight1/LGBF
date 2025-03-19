@@ -15,13 +15,8 @@ jobs:
 
     runs-on: ubuntu-24.04-arm
     container:
-      image: docker.io/jsleight1/lgbf:R4.4.2-latest
+      image: docker.io/jsleight1/lgbf:latest
       options: --user root
-
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      R_KEEP_PKG_SOURCE: yes
-      HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: true
 
     steps:
       - uses: actions/checkout@v4

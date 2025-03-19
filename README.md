@@ -44,14 +44,14 @@ LGBF()
 
 A dockerised version of the application can be launched using:
 
-    docker run -p 9001:9001 -it docker.io/jsleight1/lgbf:R4.4.2-latest
+    docker run -p 9001:9001 -it docker.io/jsleight1/lgbf:latest
 
 The application can then be viewed at:
 
     http://localhost:9001/
 
-***Please note the docker image is only avaiable for linux/arm64 OS
-architectures.***
+***Please note the docker image is only avaiable for linux/arm64 and
+linux/amd64 OS architectures.***
 
 ## Data and references.
 

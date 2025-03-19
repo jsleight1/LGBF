@@ -5,7 +5,7 @@ Description:
     This package downloads, processes and presents local goverment
     bennchmarking framewor (LGBF) indicator data for local authorities
     in Scotland.
-Version: 1.0.1
+Version: 1.0.2
 Authors@R:
     person("Jack", "Sleight", , "jacksleight@hotmail.co.uk", role = c("aut", "cre"))
 License: GPL (>= 3)
@@ -35,9 +35,16 @@ Imports:
     tidyr,
     utils
 Suggests:
+    chromote (>= 0.4.0.9000),
+    covr,
+    devtools,
     mockery,
     pkgload,
+    rcmdcheck,
     shinytest2,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    xml2
 Config/testthat/edition: 3
 LazyData: true
+Remotes:
+    github::rstudio/chromote
