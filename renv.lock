@@ -192,8 +192,11 @@
     "chromote": {
       "Package": "chromote",
       "Version": "0.4.0.9000",
-      "Source": "Repository",
-      "Repository": "GitHub"
+      "Source": "GitHub",
+      "RemoteUsername": "rstudio",
+      "RemoteRepo": "chromote",
+      "RemoteRef": "main",
+      "RemoteSha": "bdc390f55189057ade6ae8d50b1e5e5a9300059a"
     },
     "cli": {
       "Package": "cli",
