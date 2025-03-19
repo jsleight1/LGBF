@@ -41,6 +41,8 @@ WORKDIR /home/app
 
 # Install packages required for LGBF
 RUN git clone https://github.com/jsleight1/LGBF.git .
+RUN git fetch origin
+RUN git checkout -b '6-build-docker-image-using-ci' 'origin/6-build-docker-image-using-ci'
 RUN rm -rf .Rprofile renv
 RUN Rscript -e "install.packages('renv')"
 RUN R -e "renv::restore()"
