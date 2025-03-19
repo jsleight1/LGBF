@@ -51,7 +51,7 @@ RUN R -e "renv::restore()"
 # Install packages required for development and testing
 RUN Rscript -e "install.packages(c('devtools', 'rcmdcheck', 'mockery', 'shinytest2', 'covr', 'xml2'))"
 
-Expose port and run shiny application
+# Expose port and run shiny application
 USER app
 EXPOSE 9001
 CMD ["R", "-e", "shiny::runApp()"]
