@@ -32,12 +32,12 @@ RUN curl -fsS https://dl.brave.com/install.sh | sh
 # Install chrome on amd64 architectures. This is not possible for arm64.
 RUN if [ "$TARGETPLATFORM" = "amd64" ]; then apt update && apt install -y google-chrome-stable; fi;
 
-Run application as 'app' user.
-RUN addgroup --system app && adduser --system --ingroup app app
-RUN mkdir /home/app
-RUN chown app:app /home/app
-ENV HOME=/home/app
-WORKDIR /home/app
+# Run application as 'app' user.
+# RUN addgroup --system app && adduser --system --ingroup app app
+# RUN mkdir /home/app
+# RUN chown app:app /home/app
+# ENV HOME=/home/app
+# WORKDIR /home/app
 
 # Install packages required for LGBF
 RUN git clone https://github.com/jsleight1/LGBF.git \
