@@ -39,6 +39,9 @@ FROM rocker/r-ver:$RVERSION
 # ENV HOME=/home/app
 # WORKDIR /home/app
 
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+    git
+
 # Install packages required for LGBF
 RUN git clone https://github.com/jsleight1/LGBF.git \
     && cd LGBF \
