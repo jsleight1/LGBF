@@ -1,7 +1,7 @@
 
 on:
   push:
-    branches: [main]
+    branches: [6-build-docker-image-using-ci]
 
 name: dockerise.yaml
 
