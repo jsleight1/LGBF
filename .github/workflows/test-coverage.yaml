@@ -16,8 +16,6 @@ jobs:
     container:
       image: docker.io/jsleight1/lgbf:latest
       options: --user root
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
