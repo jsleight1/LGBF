@@ -7,7 +7,7 @@ with_mocked_bindings(
 
 test_that("LGBF app initial values works", {
     skip_on_cran()
-    skip_on_ci()
+    # skip_on_ci()
 
     app <- AppDriver$new(shiny_app, name = "initial", width = 800, height = 700,
         seed = 4323)
