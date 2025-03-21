@@ -35,6 +35,7 @@ jobs:
 
       - name: Check package
         run: |
+          devtools::install()
           utils::sessionInfo()
           devtools::test()
           devtools::check()
