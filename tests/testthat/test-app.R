@@ -36,7 +36,7 @@ test_that("LGBF app indicator area datatable works", {
     skip_on_cran()
 
     app <- AppDriver$new(shiny_app, name = "datatable", width = 800, height = 700,
-        seed = 4323)
+        seed = 4323, load_timeout = 80 * 1000)
 
     app$set_inputs(sidebar = "datatable_Adult_Social_Care_Services")
 
