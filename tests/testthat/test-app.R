@@ -39,7 +39,6 @@ test_that("LGBF app indicator area datatable works", {
         seed = 4323)
 
     app$set_inputs(sidebar = "datatable_Adult_Social_Care_Services")
-    # app$wait_for_value(output = "Adult_Social_Care_Services-datatable")
 
     app$expect_values()
     app$expect_unique_names()
