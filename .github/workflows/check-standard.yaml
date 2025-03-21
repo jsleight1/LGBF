@@ -33,7 +33,14 @@ jobs:
           echo -e '.libPaths(c("/usr/local/lib/R/site-library", "/usr/local/lib/R/library"))' > .Rprofile
         shell: bash
 
-      - uses: r-lib/actions/check-r-package@v2
-        with:
-          upload-snapshots: true
-          build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
+      - name: Check package
+        run: |
+          utils::sessionInfo()
+          devtools::test()
+          devtools::check()
+        shell: Rscript {0}
+
+      # - uses: r-lib/actions/check-r-package@v2
+      #   with:
+      #     upload-snapshots: true
+      #     build_args: 'c("--no-manual","--compact-vignettes=gs+qpdf")'
