@@ -13,7 +13,7 @@ permissions: read-all
 jobs:
   R-CMD-check:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     container:
       image: docker.io/jsleight1/lgbf:latest
       options: --user root
@@ -35,12 +35,6 @@ jobs:
 
       - name: Check package
         run: |
-          list.files()
-          # devtools::install()
-          library(DT)
-          library(shinytest2)
-          library(shiny)
-          utils::sessionInfo()
           # devtools::test()
           devtools::check()
         shell: Rscript {0}
