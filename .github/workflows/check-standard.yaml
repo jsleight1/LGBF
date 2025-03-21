@@ -35,9 +35,13 @@ jobs:
 
       - name: Check package
         run: |
-          devtools::install()
+          list.files()
+          # devtools::install()
+          library(DT)
+          library(shinytest2)
+          library(shiny)
           utils::sessionInfo()
-          devtools::test()
+          # devtools::test()
           devtools::check()
         shell: Rscript {0}
 
