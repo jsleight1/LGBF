@@ -32,7 +32,6 @@ jobs:
 
       - name: Test coverage
         run: |
-          Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
           cov <- covr::package_coverage(
             quiet = FALSE,
             clean = FALSE,
