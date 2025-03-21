@@ -12,7 +12,7 @@ permissions: read-all
 
 jobs:
   test-coverage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     container:
       image: docker.io/jsleight1/lgbf:latest
       options: --user root
@@ -32,7 +32,8 @@ jobs:
 
       - name: Test coverage
         run: |
-          devtools::check()
+          Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
+          #devtools::check()
           cov <- covr::package_coverage(
             quiet = FALSE,
             clean = FALSE,
