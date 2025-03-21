@@ -37,7 +37,6 @@ jobs:
         run: |
           Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
           devtools::check()
-          rcmdcheck::rcmdcheck()
         shell: Rscript {0}
 
       # - uses: r-lib/actions/check-r-package@v2
