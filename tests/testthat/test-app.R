@@ -1,7 +1,7 @@
 library(shinytest2)
 
 with_mocked_bindings(
-    process_data = function() LGBF::example_indicator_data,
+    load_lgbf_data = function() LGBF::example_indicator_data,
     shiny_app <- LGBF()
 )
 
