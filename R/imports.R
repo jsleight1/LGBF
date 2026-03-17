@@ -2,6 +2,7 @@
 NULL
 
 #' @importFrom assertthat assert_that
+#' @importFrom AzureStor storage_endpoint storage_container storage_save_rds storage_load_rds
 #' @importFrom readr read_csv write_csv
 #' @importFrom purrr imap map map_chr map_dfr map_lgl list_flatten walk
 #' @importFrom plotly add_trace plot_ly plotlyOutput renderPlotly layout

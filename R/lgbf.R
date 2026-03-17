@@ -2,7 +2,7 @@
 #' @param ... Passed to shinyApp.
 #' @export
 LGBF <- function(...) {
-    combined_data <- process_data()
+    combined_data <- load_lgbf_data()
 
     indicator_areas <- combined_data %>%
         group_split(.data[["Indicators_Information_ServiceArea"]]) %>%
