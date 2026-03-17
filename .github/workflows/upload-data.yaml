@@ -1,7 +1,11 @@
+# on:
+#   schedule:
+#     # Upload data to Azure blob every 6 months
+#     - cron: "0 0 1 */6 *"
+
 on:
-  schedule:
-    # Upload data to Azure blob every 6 months
-    - cron: "0 0 1 */6 *"
+  push:
+    branches: [11-save-data-in-external-cloud-storage]
 
 name: upload-data.yaml
 
@@ -11,7 +15,7 @@ jobs:
   upload-data:
     runs-on: ubuntu-24.04-arm
     container:
-      image: docker.io/jsleight1/lgbf:latest
+      image: docker.io/jsleight1/lgbf:development
       options: --user root
 
     steps:
