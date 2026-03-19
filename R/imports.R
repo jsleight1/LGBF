@@ -1,8 +1,9 @@
-#' @import ggplot2 dplyr shiny shinydashboard
+#' @import ggplot2 dplyr shiny bslib
 NULL
 
 #' @importFrom assertthat assert_that
 #' @importFrom AzureStor storage_endpoint storage_container storage_save_rds storage_load_rds
+#' @importFrom bsicons bs_icon
 #' @importFrom readr read_csv write_csv
 #' @importFrom purrr imap map map_chr map_dfr map_lgl list_flatten walk
 #' @importFrom plotly add_trace plot_ly plotlyOutput renderPlotly layout
@@ -11,6 +12,7 @@ NULL
 #' @importFrom tidyr pivot_longer
 #' @importFrom httr2 request req_retry req_perform
 #' @importFrom glue glue
+#' @importFrom logger log_info
 #' @importFrom tibble new_tibble deframe enframe
 #' @importFrom DT DTOutput renderDT
 #' @importFrom stringr str_c

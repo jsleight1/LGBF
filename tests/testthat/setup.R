@@ -1,1 +1,1 @@
-Sys.setenv(CHROMOTE_CHROME="/usr/bin/brave-browser")
+Sys.setenv(CHROMOTE_CHROME = "/usr/bin/brave-browser")

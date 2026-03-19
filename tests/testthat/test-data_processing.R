@@ -1,22 +1,22 @@
 library(mockery)
 
 test_that("process_lgbf_data works", {
-    m <- mock()
-    with_mocked_bindings(
-        download_csv_data = function(x) {
-            meta_cols <- required_lgbf_metadata_cols()
-            meta_cols <- setNames(names(meta_cols), meta_cols)
-            data <- if(grepl("indicator-information", x)) {
-                unique(select(example_indicator_data, all_of(meta_cols)))
-            } else {
-                rm_cols <- setdiff(meta_cols, "Indicators_Information_Code")
-                select(example_indicator_data, -all_of(rm_cols))
-            }
-        },
-        out <- process_lgbf_data()
-    )
-    expect_s3_class(out, "data.frame")
-    expect_identical(out, example_indicator_data)
+  m <- mock()
+  with_mocked_bindings(
+    download_csv_data = function(x) {
+      meta_cols <- required_lgbf_metadata_cols()
+      meta_cols <- setNames(names(meta_cols), meta_cols)
+      data <- if (grepl("indicator-information", x)) {
+        unique(select(example_indicator_data, all_of(meta_cols)))
+      } else {
+        rm_cols <- setdiff(meta_cols, "Indicators_Information_Code")
+        select(example_indicator_data, -all_of(rm_cols))
+      }
+    },
+    out <- process_lgbf_data()
+  )
+  expect_s3_class(out, "data.frame")
+  expect_identical(out, example_indicator_data)
 })
 
 test_that("save_lgbf_data works", {
