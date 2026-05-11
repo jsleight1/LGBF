@@ -10,3 +10,4 @@ _disable_autoload.R
 ^Makefile$
 ^Dockerfile$
 ^.cache$
+^processed_lgbf_data.RDS$
