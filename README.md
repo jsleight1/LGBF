@@ -16,6 +16,8 @@ shiny application generates interactive visualisations and datatables of
 local government benchmarking Framework indicator data generated across
 local authorities in Scotland.
 
+This repo has been superceded by [LGBFScotland](https://github.com/jsleight1/lgbfscotland).
+
 ## Installation
 
 You can install the development version of LGBF from
